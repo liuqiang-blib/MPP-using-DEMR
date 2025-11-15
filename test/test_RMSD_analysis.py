@@ -22,7 +22,7 @@ mol_id = 'activemol7'
 zip_path = "./activemol7_output_center.zip"
 import os
 
-extract_dir = os.getcwd()  # 获取当前工作目录
+extract_dir = os.getcwd()
 import zipfile
 
 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
@@ -33,7 +33,8 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
 pdb_file ="./activemol7_output_center.pdb"
 xtc_file = "./activemol7_md_center.xtc"
 print(mol_id )
-# === 加载轨迹 ===
+
+
 u = mda.Universe(pdb_file, xtc_file)
 
 mobile_atoms = u.select_atoms("all")
